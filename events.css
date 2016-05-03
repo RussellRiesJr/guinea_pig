@@ -5,3 +5,24 @@
 .biggify {
   font-size: x-large;
 }
+
+.capture {
+  border: 2px dashed orange;
+}
+
+.rounder {
+  border-radius: 10px;
+}
+
+section:nth-child(1) {
+  font-weight: bold;
+}
+
+section:nth-child(6) {
+  font-weight: bold;
+  font-style: italic;
+}
+
+button {
+  display: block;
+}

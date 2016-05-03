@@ -47,10 +47,17 @@ biggen.addEventListener("click", function(event) {
   pig.classList.toggle("biggify");
 });
 
-
 // When you click the "Capture it" button, the guinea-pig element should have a border added to it.
+var bord = document.getElementById("add-border");
+bord.addEventListener("click", function(event) {
+  pig.classList.toggle("capture");
+});
 
 // When you click the "Rounded" button, the guinea-pig element's border should become rounded.
+var round = document.getElementById("add-rounding");
+round.addEventListener("click", function(event) {
+  pig.classList.toggle("rounder");
+});
 
 // The first section's text should be bold.
 
