@@ -8,20 +8,45 @@ function sectionClick(mouseEvent) {
   outputTarget.innerHTML = "<p>You clicked on the " + elementText + " section!";
 }
 
-
 var aSection = document.getElementsByClassName("article-section");
 for (var i = 0; i < aSection.length; i++) {
   aSection.item(i).addEventListener("click", sectionClick);
 }
 // When the mouse is over the h1 tag, the output element should contain the text "You moved your mouse over the header".
-
+function mouseOverHead(mouseEvent) {
+  var mouseOverText = mouseEvent.target.innerHTML;
+  outputTarget.innerHTML = "<p>You moved your mouse over the header!</p>";
+}
+var header = document.getElementById("page-header");
+header.addEventListener("mouseover", mouseOverHead);
 // When the mouse leaves the h1 tag, the output element should contain the text "You left me!!".
+function mouseOffHead(mouseEvent) {
+  var mouseOffText = mouseEvent.target.innerHTML;
+  outputTarget.innerHTML = "<p>You left me!!</p>"
+}
+
+header.addEventListener("mouseout", mouseOffHead);
 
 // When you type characters into the input field, the output element should mirror the text in the input field.
+var textInput = document.getElementById("keypress-input");
+
+textInput.addEventListener("keyup", function(event) {
+  outputTarget.innerHTML = event.target.value;
+});
 
 // When you click the "Add color" button, the guinea-pig element's text color should change to blue.
+var pig = document.getElementById("guinea-pig");
+var color = document.getElementById("add-color");
+color.addEventListener("click", function(event) {
+  pig.classList.toggle("blue");
+});
 
 // When you click the "Hulkify" button, the guinea-pig element's font size should become much larger.
+var biggen = document.getElementById("make-large");
+biggen.addEventListener("click", function(event) {
+  pig.classList.toggle("biggify");
+});
+
 
 // When you click the "Capture it" button, the guinea-pig element should have a border added to it.
 
